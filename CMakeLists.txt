@@ -28,7 +28,10 @@ endif()
 add_library(mathcore_lib
     src/arithmetic.cpp
     src/algebra.cpp
-    src/linalg.cpp
+    src/linalg/linalg_vector.cpp
+    src/linalg/linalg_matrix.cpp
+    src/linalg/linalg_small_matrix.cpp
+    src/linalg/linalg_operations.cpp
     src/matrix.cpp
     src/vector.cpp
     src/stats.cpp
@@ -55,10 +58,11 @@ if (BUILD_TESTS)
         tests/test_main.cpp
         tests/test_arithmetic.cpp
         tests/test_algebra.cpp
-        tests/test_linalg.cpp
-        tests/test_matrix.cpp
+        tests/test_linalg/test_linalg_vector.cpp  
+        tests/test_linalg/test_linalg_matrix.cpp  
+        tests/test_linalg/test_linalg_small_matrix.cpp   
+        tests/test_linalg/test_linalg_operations.cpp 
         tests/test_stats.cpp
-        tests/test_vector.cpp
     )
 
     target_link_libraries(tests
